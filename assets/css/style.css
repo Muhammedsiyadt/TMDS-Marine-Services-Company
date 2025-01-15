@@ -1136,103 +1136,127 @@ About Section End
 /*=================================
 Service Area 
 ====================================*/
+.service-area {
+  position: relative;
+}
+.service-area .owl-theme .owl-nav {
+  position: absolute;
+  margin-top: 0;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-33px);
+}
+.service-area .owl-theme .owl-nav .owl-prev {
+  position: absolute;
+  left: -5%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 0;
+  background-color: #ffeded;
+  color: #ffbf00;
+  border-radius: 0;
+  transition: all 0.5s;
+}
+.service-area .owl-theme .owl-nav .owl-prev:hover {
+  background-color: #ffbf00;
+  color: #ffeded;
+}
+.service-area .owl-theme .owl-nav .owl-next {
+  position: absolute;
+  right: -5%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 0;
+  background-color: #ffeded;
+  color: #ffbf00;
+  border-radius: 0;
+  transition: all 0.5s;
+}
+.service-area .owl-theme .owl-nav .owl-next:hover {
+  background-color: #ffbf00;
+  color: #ffeded;
+}
+.service-area .owl-theme .owl-item.active.center .service-item {
+  background-image: url(../img/shape/bg-shape.png);
+  color: #fff;
+}
+.service-area .owl-theme .owl-item.active.center .service-item h3 {
+  color: #fff;
+}
+.service-area .owl-theme .owl-item.active.center .service-item p {
+  color: #fff;
+}
+.service-area .owl-theme .owl-item.active.center .service-item .service-item-icon {
+  color: #fff;
+}
 
-/* General Card Styles */
 .service-item {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  padding: 35px 15px;
   background-color: #fff;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  opacity: 0.9; /* Slight transparency */
+  text-align: center;
 }
-
 .service-item:hover {
-  transform: translateY(-10px); /* Lift effect */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+.service-item.active::before {
+  opacity: 1;
+  height: 100%;
+}
+.service-item.active .service-head h3, .service-item.active .service-item-icon, .service-item.active p {
+  color: #fff;
+}
+.service-item:hover::before {
+  opacity: 1;
+  height: 100%;
+  transform: 0.7s;
+}
+.service-item:hover .service-icon {
   opacity: 1;
 }
-
-.service-item img.card-img-top {
+.service-item:hover .service-head h3, .service-item:hover .service-item-icon, .service-item:hover p {
+  color: #fff;
+}
+.service-item::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
   width: 100%;
-  height: 220px; /* Adjust height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  transition: transform 0.4s ease;
+  height: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../img/shape/bg-shape.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.9s;
 }
-
-/* Scale the image slightly on hover */
-.service-item:hover img.card-img-top {
-  transform: scale(1.05);
+.service-item .service-item-icon {
+  font-size: 80px;
+  color: #64acff;
+  line-height: 1.2;
+  position: relative;
+  display: block;
+  transition: 0.9s;
 }
-
-/* Content inside the service item */
-.service-item-content {
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, color 0.3s ease;
+.service-item .service-head {
+  position: relative;
+  display: block;
 }
-
-.service-item h5 {
-  font-size: 22px;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s ease;
+.service-item .service-head h3 {
+  font-size: 24px;
 }
-
 .service-item p {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.6;
-  transition: color 0.3s ease;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
 }
-
-/* Hover Effect on Text */
-.service-item:hover .service-item-content h5,
-.service-item:hover .service-item-content p {
-  color: #ffbf00; /* Change text color on hover */
-}
-
-/* Card shadow on hover */
-.service-item:hover .service-item-content {
-  transform: translateY(-10px); /* Slight upward movement of content */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .service-item {
-      margin-bottom: 20px;
-  }
-
-  .service-item img.card-img-top {
-      height: 200px; /* Adjust height for smaller screens */
-  }
-}
-
-/* Section Title */
-.section-title span {
-  color: #ffbf00;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.section-title h2 {
-  font-size: 36px;
-  color: #333;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.section-title p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.6;
-}
-
 
 /*=================================
 Services Area End
